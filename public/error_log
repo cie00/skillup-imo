@@ -1,0 +1,2 @@
+[13-Oct-2022 09:00:07 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 32768 bytes) in /home/skillupimoorg/public_html/app/Models/Setting.php on line 1
+[13-Oct-2022 09:00:10 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/skillupimoorg/public_html/vendor/composer/ClassLoader.php on line 571

@@ -150,7 +150,10 @@
                                 <img src="<?php echo e($recommendedTopic->icon); ?>" alt="<?php echo e($recommendedTopic->title); ?>" class="img-cover">
                             </div>
 
-                            <h4 class="font-16 font-weight-bold text-secondary mt-10"><?php echo e($recommendedTopic->title); ?></h4>
+                            <h4 class="font-16 font-weight-bold text-secondary mt-10">
+                                <?php echo e($recommendedTopic->title); ?>
+
+                            </h4>
 
                             <div class="forum-recommended-topics__lists mt-5">
                                 <?php $__currentLoopData = $recommendedTopic->topics; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $topic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -196,8 +199,8 @@
             </div>
 
             <div class="col-12 col-md-5 d-none d-md-block position-relative">
-                <div class="forum-question-section__img">
-                    <img src="/assets/default/img/forum/question-section.png" class="img-fluid" alt="">
+                <div class="forum-question-section__img" style="margin-top: -20px;">
+                    <img src="/assets/default/img/forum/question-section.png" class="img" alt="">
                 </div>
             </div>
         </div>

@@ -32,4 +32,23 @@ class PagesController extends Controller
 
         abort(404);
     }
+
+    public function about() {
+        $page = Page::where('link', '/aboutus')
+            ->where('status', 'publish')
+            ->first();
+
+        if (!empty($page)) {
+            $data = [
+                'pageTitle' => $page->title,
+                'pageDescription' => $page->seo_description,
+                'pageRobot' => $page->robot ? 'index, follow, all' : 'NOODP, nofollow, noindex',
+                'page' => $page
+            ];
+            
+            return view('web.default.pages.about_us', $data);
+        }
+
+        abort(404);
+    }
 }

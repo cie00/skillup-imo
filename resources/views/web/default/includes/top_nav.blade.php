@@ -47,14 +47,14 @@
 
                     <input type="hidden" name="locale">
 
-                    <div class="language-select">
+                    <!-- <div class="language-select">
                         <div 
                             id="localItems"
                             class="text-white"
                             data-selected-country="{{ localeToCountryCode(mb_strtoupper(app()->getLocale())) }}"
                             data-countries='{{ json_encode($localLanguage) }}'
                         ></div>
-                    </div>
+                    </div> -->
                 </form>
             @else
                 <div class="mr-15 mx-md-20"></div>
@@ -86,9 +86,9 @@
         <div class="xs-w-100 d-flex align-items-center justify-content-between text-white">
             <div class="d-flex text-white">
 
-                @include(getTemplate().'.includes.shopping-cart-dropdwon')
+                <!-- @include(getTemplate().'.includes.shopping-cart-dropdwon') -->
 
-                <div class="border-left mx-5 mx-lg-15 text-white"></div>
+                <!-- <div class="border-left mx-5 mx-lg-15 text-white"></div> -->
 
                 @include(getTemplate().'.includes.notification-dropdown')
             </div>

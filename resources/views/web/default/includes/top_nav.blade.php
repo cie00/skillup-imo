@@ -4,13 +4,14 @@
     if (!empty($generalSettings['user_languages']) and is_array($generalSettings['user_languages'])) {
         $userLanguages = getLanguages($generalSettings['user_languages']);
     }
+    
 
     $localLanguage = [];
 
     foreach($userLanguages as $key => $userLanguage) {
         $localLanguage[localeToCountryCode($key)] = $userLanguage;
     }
-
+    
 @endphp
 
 <style>
@@ -27,40 +28,47 @@
         <div class="top-contact-box border-bottom d-flex flex-column flex-md-row align-items-center justify-content-center">
 
             <div class="d-flex align-items-center justify-content-center">
-                                    <span class="d-flex align-items-center py-10 py-lg-0 text-white font-14">
+                <!-- <span class="d-flex align-items-center py-10 py-lg-0 text-white font-14">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone mr-10"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         415-716-1166
-                    </span>
+                </span> -->
                 
-                                    <div class="border-left mx-5 mx-lg-15 h-100"></div>
+                <div class="border-left mx-5 mx-lg-15 h-100"></div>
 
-                    <span class="d-flex align-items-center py-10 py-lg-0 text-white font-14">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail mr-10"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        info@skillupimo.org.ng
-                    </span>
-                            </div>
+                <span class="d-flex align-items-center py-10 py-lg-0 text-white font-14">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail mr-10"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    info@skillupimo.org.ng
+                </span>
+            </div>
+
+            @if(!empty($localLanguage))
+                <form action="/locale" method="post" class="mr-15 mx-md-20">
+                    {{ csrf_field() }}
+
+                    <input type="hidden" name="locale">
+
+                    <!-- <div class="language-select">
+                        <div 
+                            id="localItems"
+                            class="text-white"
+                            data-selected-country="{{ localeToCountryCode(mb_strtoupper(app()->getLocale())) }}"
+                            data-countries='{{ json_encode($localLanguage) }}'
+                        ></div>
+                    </div> -->
+                </form>
+            @else
+                <div class="mr-15 mx-md-20"></div>
+            @endif
                             
-            <form action="/locale" method="post" class="text-white mr-15 mx-md-20">
-                        
-
-                        <div class="language-select text-white">
-                            <div id="localItems" data-selected-country="TR" data-countries="{&quot;IQ&quot;:&quot;Arabic&quot;,&quot;US&quot;:&quot;English&quot;,&quot;ES&quot;:&quot;Spanish&quot;}" class="flagstrap"><select id="" name="country" style="display: none;"><option value="">
-                                Select State</option><option value="IQ">Arabic</option><option value="US">English</option><option value="ES">Spanish</option></select><button style="display:none;" type="button" data-toggle="dropdown" id="flagstrap-drop-down-Bw95l0o3" class="btn btn-default btn-sm dropdown-toggle" aria-expanded="false"><span class="flagstrap-selected-Bw95l0o3"><i class="flagstrap-icon flagstrap-placeholder" style="display:none;"></i>
-                                Select State</span><span class="caret" style="margin-left: 5px;"></span></button><ul id="flagstrap-drop-down-Bw95l0o3-list" aria-labelled-by="flagstrap-drop-down-Bw95l0o3" class="dropdown-menu" style="height: auto; max-height: 350px; overflow-x: hidden;"><li><a data-val="">
-                                Select State</a></li><li><a data-val="IQ"><i class="flagstrap-icon flagstrap-iq" style="margin-right: 5px;"></i>Arabic</a></li><li><a data-val="US"><i class="flagstrap-icon flagstrap-us" style="margin-right: 5px;"></i>English</a></li><li><a data-val="ES"><i class="flagstrap-icon flagstrap-es"></i>Spanish</a></li></ul></div>
-                        </div>
-                    </form>
+            
             <script type="text/javascript">
-                                document.getElementsByID("localItems").innerHTML = "Select State";
-                            </script>
+                document.getElementsByID("localItems").innerHTML = "Select State";
+            </script>
 
             
             <div class="d-flex align-items-center justify-content-between justify-content-md-center">
-               
-
-
                 <form action="/search" method="get" class="form-inline my-2 my-lg-0 navbar-search position-relative w-100">
-                    <input class="form-control mr-5 rounded w-100" type="text" name="search" placeholder="{{ trans('navbar.search_anything') }}" aria-label="Search">
+                    <input class="form-control mr-5 rounded w-120" type="text" name="search" placeholder="{{ trans('navbar.search_anything') }}" aria-label="Search">
 
                     <button type="submit" class="text-white btn-transparent d-flex align-items-center justify-content-center search-icon">
                         <i data-feather="search" width="20" height="20" class="mr-10"></i>
@@ -78,9 +86,9 @@
         <div class="xs-w-100 d-flex align-items-center justify-content-between text-white">
             <div class="d-flex text-white">
 
-                @include(getTemplate().'.includes.shopping-cart-dropdwon')
+                <!-- @include(getTemplate().'.includes.shopping-cart-dropdwon') -->
 
-                <div class="border-left mx-5 mx-lg-15 text-white"></div>
+                <!-- <div class="border-left mx-5 mx-lg-15 text-white"></div> -->
 
                 @include(getTemplate().'.includes.notification-dropdown')
             </div>

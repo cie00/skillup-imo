@@ -42,11 +42,11 @@
                         <label class="input-label">Select Skills:</label>
                         
                         <select name="skills"id="skills" class="form-control select2">
-                             <option value=" " selected>Select the Skill you want to Learn</option>
-                          <option value="TECHPRENEUR (Website Design)">TECHPRENEUR (Website Design)</option>
-                          <option value="TECHPRENEUR (Backend Programmer)">TECHPRENEUR (Backend Programmer)</option>
-                          <option value="TECHPRENEUR (Digital Marketing)">TECHPRENEUR (Digital Marketing)</option>
-                          <option value="TECHPRENEUR (Data Analysis)">TECHPRENEUR (Data Analysis)</option>
+                            <option value=" " selected>Select the Skill you want to Learn</option>
+                            <option value="TECHPRENEUR (Website Design)">TECHPRENEUR (Website Design)</option>
+                            <option value="TECHPRENEUR (Backend Programmer)">TECHPRENEUR (Backend Programmer)</option>
+                            <option value="TECHPRENEUR (Digital Marketing)">TECHPRENEUR (Digital Marketing)</option>
+                            <option value="TECHPRENEUR (Data Analysis)">TECHPRENEUR (Data Analysis)</option>
                         </select>
                            @error('skills')
                                                         

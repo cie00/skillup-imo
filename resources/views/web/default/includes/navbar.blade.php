@@ -91,9 +91,15 @@
                     @endif
 
                     @if(!empty($navbarPages) and count($navbarPages))
+                    
                         @foreach($navbarPages as $navbarPage)
+                            
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ $navbarPage['link'] }}">{{ $navbarPage['title'] }}</a>
+                                <a 
+                                    class="nav-link" 
+                                    href="{{ $navbarPage['link'] }}"
+                                    style="{{$navbarPage['title'] == "Store" ? 'display:none' : ''}}"
+                                    >{{ $navbarPage['title'] }}</a>
                             </li>
                         @endforeach
                     @endif
@@ -113,9 +119,9 @@
                 @endif
 
                 <div class="d-none nav-notify-cart-dropdown top-navbar ">
-                    @include(getTemplate().'.includes.shopping-cart-dropdwon')
+                    <!-- @include(getTemplate().'.includes.shopping-cart-dropdwon')
 
-                    <div class="border-left mx-15"></div>
+                    <div class="border-left mx-15"></div> -->
 
                     @include(getTemplate().'.includes.notification-dropdown')
                 </div>

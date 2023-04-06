@@ -1,6 +1,8 @@
 app.zip
 /node_modules
 /public/uploads
+/public/storage
+/app/storage/
 /storage/*.key
 /vendor
 .env

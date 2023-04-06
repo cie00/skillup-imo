@@ -32,7 +32,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => ['check_mobile_app', 'share
     Route::get('/login', 'LoginController@showLoginForm');
     Route::post('/login', 'LoginController@login');
     Route::get('/logout', 'LoginController@logout');
-    Route::get('/register', 'RegisterController@showRegistrationForm');
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register.get');
     Route::post('/register', 'RegisterController@register');
     Route::get('/verification', 'VerificationController@index');
     Route::post('/verification', 'VerificationController@confirmCode');
@@ -222,6 +222,10 @@ Route::group(['namespace' => 'Web', 'middleware' => ['check_mobile_app', 'impers
 
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/{link}', 'PagesController@index');
+    });
+    
+    Route::group(['prefix' => 'aboutus'], function () {
+        Route::get('/', 'PagesController@about');
     });
 
     // Captcha

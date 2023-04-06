@@ -48,14 +48,14 @@
 
                     <input type="hidden" name="locale">
 
-                    <div class="language-select">
+                    <!-- <div class="language-select">
                         <div 
                             id="localItems"
                             class="text-white"
                             data-selected-country="<?php echo e(localeToCountryCode(mb_strtoupper(app()->getLocale()))); ?>"
                             data-countries='<?php echo e(json_encode($localLanguage)); ?>'
                         ></div>
-                    </div>
+                    </div> -->
                 </form>
             <?php else: ?>
                 <div class="mr-15 mx-md-20"></div>
@@ -87,9 +87,9 @@
         <div class="xs-w-100 d-flex align-items-center justify-content-between text-white">
             <div class="d-flex text-white">
 
-                <?php echo $__env->make(getTemplate().'.includes.shopping-cart-dropdwon', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <!-- <?php echo $__env->make(getTemplate().'.includes.shopping-cart-dropdwon', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> -->
 
-                <div class="border-left mx-5 mx-lg-15 text-white"></div>
+                <!-- <div class="border-left mx-5 mx-lg-15 text-white"></div> -->
 
                 <?php echo $__env->make(getTemplate().'.includes.notification-dropdown', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
